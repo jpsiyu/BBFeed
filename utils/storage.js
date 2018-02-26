@@ -12,7 +12,6 @@ Storage.prototype.init = function(){
   var newDict = function(){
     var d = {}
     d.version = version
-    d[today] = []
     return d
   }
 
@@ -22,6 +21,9 @@ Storage.prototype.init = function(){
     this.recordDict = newDict()
   else
     this.recordDict = res
+
+  if(this.recordDict[today] == null)
+    this.recordDict[today] = []
 
   //console.log('init storage', this.recordDict)
 }
