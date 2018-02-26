@@ -1,0 +1,15 @@
+<!--pages/analyse/analyse.wxml-->
+<view>
+
+<view class='clock-container' wx:for='{{clockList}}' wx:key='unique'>
+  <view class='label' style='margin-top:{{item.clockPos}}px'>{{item.clock}} -</view>
+</view>
+
+<view class='label-container' wx:for='{{labelList}}' wx:key='unique'>
+  <view class='label' style='margin-top:{{item.labelPos}}px'>- {{item.msg}}</view>
+</view>
+
+<view class='line' style='height:{{lineH}}px'></view>
+
+
+</view>

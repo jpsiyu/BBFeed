@@ -1,0 +1,22 @@
+/* pages/analyse/analyse.wxss */
+
+.line{
+  margin-left: 50%;
+  margin-top: 50px;
+  width: 5rpx;
+  background-color: black;
+}
+
+.clock-container{
+  position: absolute;
+  margin-left: 33%;
+}
+
+.label-container{
+  position: absolute;
+  margin-left: 50%;
+}
+
+.label{
+  width: 100%;
+}
