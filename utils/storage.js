@@ -1,6 +1,9 @@
 const key = 'record'
-var today = new Date().toLocaleDateString()
-var version = '1.1'
+var version = '1.2'
+
+/**
+ * rType, 0:喂奶 1:睡觉 2:臭臭
+ */
 
 var Storage = function(){
   this.recordDict = null;
@@ -8,10 +11,13 @@ var Storage = function(){
 
 Storage.prototype.init = function(){
   var res = wx.getStorageSync(key)
+  var day = new Date().toLocaleDateString()
 
   var newDict = function(){
     var d = {}
     d.version = version
+    d.record = []
+    d.day = day
     return d
   }
 
@@ -19,18 +25,17 @@ Storage.prototype.init = function(){
     this.recordDict = newDict()
   else if(res.version != version)
     this.recordDict = newDict()
+  else if(res.day != day)
+    this.recordDict = newDict()
   else
     this.recordDict = res
-
-  if(this.recordDict[today] == null)
-    this.recordDict[today] = []
 
   //console.log('init storage', this.recordDict)
 }
 
 
 Storage.prototype.add = function (aRecord){
-  this.recordDict[today].push(aRecord)
+  this.recordDict.record.push(aRecord)
   wx.setStorage({
     key: key,
     data: this.recordDict,
@@ -40,7 +45,19 @@ Storage.prototype.add = function (aRecord){
 }
 
 Storage.prototype.get = function(){
-  return this.recordDict[today]
+  return this.recordDict.record
+}
+
+Storage.prototype.getCount = function(rType) {
+  var c = 0
+  var record = this.recordDict.record
+  var r = null
+  for(var i = 0; i < record.length; i++){
+    r = record[i]
+    if(r.rType == rType)
+      c++
+  }
+  return c
 }
 
 Storage.prototype.getStr = function(rType, time){

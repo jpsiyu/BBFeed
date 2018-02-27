@@ -2,6 +2,7 @@ var app = getApp()
 var util = require('../../utils/util.js')
 
 var msgCfg = ['喂奶', '睡觉', '臭臭']
+var imgCfg = ['carton17', 'carton18', 'carton19']
 
 Page({
 
@@ -27,7 +28,9 @@ Page({
     var storageStr = app.storage.getStr(rType, d)
     this.add2storage(storageStr)
 
-    var display = {msg: msgCfg[rType], time: ts}
+    var display = this.storage2display(storageStr)
+    //console.log(display)
+    
     this.data.records.unshift(display)
     this.updateRecord()
   },
@@ -37,8 +40,8 @@ Page({
    */
   storage2display(record){
     var msg = msgCfg[record.rType]
-    var ts = util.formatTime2(new Date(record.time))
-    return {msg:msg, time: ts}
+    var ts = util.formatTime3(new Date(record.time))
+    return {msg:msg, time: ts, img:imgCfg[record.rType]}
   },
 
   /**

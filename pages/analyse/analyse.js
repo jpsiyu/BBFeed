@@ -7,9 +7,8 @@ var msgCfg = ['喂奶', '睡觉', '臭臭']
 
 
 var viewCfg = {
-  labelH: 15,
+  labelH: 13,
   lineH: 2400,
-  //lineH: wx.getSystemInfoSync().windowHeight - 30 * 2,
 }
 
 Page({
@@ -69,6 +68,16 @@ Page({
   },
 
   /**
+   * 更新统计
+   */
+  updateAnalyse: function(){
+    this.setData({
+      feedCount: app.storage.getCount(0),
+      shitCount: app.storage.getCount(2),
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
@@ -88,7 +97,7 @@ Page({
    */
   onShow: function () {
     this.updateLine()
-    
+    this.updateAnalyse()
   },
 
   /**

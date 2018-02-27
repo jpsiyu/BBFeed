@@ -16,15 +16,29 @@
 }
 
 .item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   text-align: center;
   margin: 2px;
   width: 100%;
-  height: 50px;
+  height: 150px;
   box-shadow: 0 5rpx 5rpx 0 whitesmoke;
 }
 
+
+.item image{
+  width: 128px;
+  height: 128px;
+}
+
+.item text{
+  color: gray;
+}
+
 .block-btns{
-  background-color: pink;
+  background-color: gray;
   position: fixed;
   bottom: 2px;
   box-shadow: 0 0 10rpx 10rpx whitesmoke;
@@ -37,10 +51,13 @@
   align-items: center;
 }
 
+
 .btn{
+  background-color: whitesmoke;
   border-radius: 50%;
   width: 100rpx;
   height: 100rpx;
   text-align: center;
   display: flex;
+  color: gray;
 }

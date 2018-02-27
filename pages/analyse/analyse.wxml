@@ -9,6 +9,14 @@
   <view class='label' style='margin-top:{{item.labelPos}}px'>- {{item.msg}}</view>
 </view>
 
+<view class='analyseTips'>
+<view class='tips-contain'>
+  <text>记一记</text>
+  <text>吃奶次数：{{feedCount}}</text>
+  <text>臭臭次数：{{shitCount}}</text>
+</view>
+</view>
+
 <view class='line' style='height:{{lineH}}px'></view>
 
 

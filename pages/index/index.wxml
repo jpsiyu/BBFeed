@@ -2,15 +2,21 @@
 
 <scroll-view scroll-y="true" class='list'>
 <view wx:for="{{records}}"  wx:key='unique'> 
-<view class='item'>{{item.time}}:{{item.msg}}</view>
+  <view class='item'> 
+    <text>{{item.time}}</text>
+    <image src='../../pic/{{item.img}}.png' mode='aspectFit' ></image>
+    <text>{{item.msg}}</text>
+  </view>
 </view>
 </scroll-view>
 
 <view class='block-btns'>
+
 <button class='btn' bindtap='feed'>奶</button>
 <button class='btn' bindtap='sleep'>睡</button>
 <button class='btn' bindtap='shit'>臭</button>
 <button class='btn' bindtap='jump'>记</button>
+
 </view>
 
 </view>
