@@ -1,0 +1,44 @@
+<!-- pages/statistics/statistics.wxml -->
+<div class="statistics">
+    <div class="record">
+        <div class="record-item">
+            <div class="item-container">
+                <p class="date">{{dayNum}}</p>
+                <p class="small">号</p>
+            </div>
+        </div>
+        <div class="record-item">
+            <div class="item-container">
+                <image src="/pic/carton17.png"></image>
+                <p>{{feedCount}}</p>
+                <p class="small">次</p>
+            </div>
+        </div>
+        <div class="record-item">
+            <div class="item-container">
+                <image src="/pic/carton18.png"></image>
+                <p>{{sleepCount}}</p>
+                <p class="small">次</p>
+            </div>
+        </div>
+        <div class="record-item">
+            <div class="item-container">
+                <image src="/pic/carton19.png"></image>
+                <p>{{shitCount}}</p>
+                <p class="small">次</p>
+            </div>
+        </div>
+    </div>
+    <div class="empty"></div>
+    <div class="support">
+        <image src="/pic/cat.png"></image>
+        <div class="support-item">
+            <p>Email</p>
+            <p>cowbigcar@163.com</p>
+        </div>
+        <div class="support-item">
+            <p>Paypal</p>
+            <p>paypal.me/cowbigcar</p>
+        </div>
+    </div>
+</div>

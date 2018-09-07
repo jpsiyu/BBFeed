@@ -77,7 +77,7 @@ Page({
    */
   jump: function(){
     wx.navigateTo({
-      url: '../analyse/analyse',
+      url: '../statistics/statistics',
     })
   },
 

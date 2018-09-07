@@ -1,22 +1,41 @@
 <view class='page-container'>
-
-<scroll-view scroll-y="true" class='list'>
-<view wx:for="{{records}}"  wx:key='unique'> 
-  <view class='item'> 
-    <text>{{item.time}}</text>
-    <image src='../../pic/{{item.img}}.png' mode='aspectFit' ></image>
-    <text>{{item.msg}}</text>
+  <scroll-view scroll-y="true" class='list'>
+    <view wx:for="{{records}}" wx:key='unique'>
+      <view class='item'>
+        <text>{{item.time}}</text>
+        <image src='/pic/{{item.img}}.png' mode='aspectFit'></image>
+        <text>{{item.msg}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <div class='desc' wx:if="{{records.length == 0}}">
+    <div class="desc-a">
+      <p>点击下面的按钮，记录宝宝的活动，为宝宝的健康成长保驾护航!</p>
+    </div>
+    <div class="desc-b">
+      <image src='/pic/carton17.png'></image>
+    </div>
+  </div>
+  <view class='block-btns'>
+    <div class="btn-container">
+      <div class='btn' bindtap='feed'>
+        <image src="/pic/carton17.png"></image>
+      </div>
+    </div>
+    <div class="btn-container">
+      <div class='btn' bindtap='sleep'>
+        <image src="/pic/carton18.png"></image>
+      </div>
+    </div>
+    <div class="btn-container">
+      <div class='btn' bindtap='shit'>
+        <image src="/pic/carton19.png"></image>
+      </div>
+    </div>
+    <div class="btn-container">
+      <div class='btn' bindtap='jump'>
+        <p>统计</p>
+      </div>
+    </div>
   </view>
-</view>
-</scroll-view>
-
-<view class='block-btns'>
-
-<button class='btn' bindtap='feed'>奶</button>
-<button class='btn' bindtap='sleep'>睡</button>
-<button class='btn' bindtap='shit'>臭</button>
-<button class='btn' bindtap='jump'>记</button>
-
-</view>
-
 </view>
