@@ -29,12 +29,29 @@
 
 
 .item image{
-  width: 150rpx;
-  height: 150rpx;
+  width: 130rpx;
+  height: 130rpx;
+  pointer-events: none;
 }
 
 .item text{
   color: gray;
+  pointer-events: none;
+}
+
+.delete{
+  background-color: red;
+  color: white;
+  height: 100rpx;
+  width: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.delete p{
+  pointer-events: none;
 }
 
 .desc{
@@ -93,7 +110,7 @@
 }
 
 .btn image{
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
 
 }

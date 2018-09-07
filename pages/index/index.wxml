@@ -1,10 +1,13 @@
 <view class='page-container'>
   <scroll-view scroll-y="true" class='list'>
-    <view wx:for="{{records}}" wx:key='unique'>
-      <view class='item'>
+    <view wx:for="{{records}}" wx:key='unique' wx:for-index="idx">
+      <view class='item' bindtap='onItemTap' data-idx="{{idx}}">
         <text>{{item.time}}</text>
         <image src='/pic/{{item.img}}.png' mode='aspectFit'></image>
         <text>{{item.msg}}</text>
+        <div wx:if="{{selected == idx}}" class="delete" bindtap="onItemDelete" data-idx="{{idx}}">
+          <p>删</p>
+        </div>
       </view>
     </view>
   </scroll-view>

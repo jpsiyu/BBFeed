@@ -44,6 +44,21 @@ Storage.prototype.add = function (aRecord){
   })
 }
 
+Storage.prototype.delete = function (index, cb) {
+  //倒叙删除
+  const spliceIndex = this.recordDict.record.length - index - 1
+  this.recordDict.record.splice(spliceIndex, 1)
+  wx.setStorage({
+    key: key,
+    data: this.recordDict,
+    success: function () { 
+      console.log("delete storage success") 
+      if(cb) cb()
+    },
+    fail: function () { console.log("delete storage fail") },
+  })
+}
+
 Storage.prototype.get = function(){
   return this.recordDict.record
 }
